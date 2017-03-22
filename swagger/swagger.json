@@ -23,7 +23,7 @@
   } ],
   "schemes" : [ "https" ],
   "paths" : {
-    "/nav-menu" : {
+    "/navmenu" : {
       "get" : {
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -142,7 +142,7 @@
   "definitions" : {
     "MenuItems" : {
       "type" : "object",
-      "required" : [ "id", "name", "ref" ],
+      "required" : [ "active", "id", "name", "ref" ],
       "properties" : {
         "id" : {
           "type" : "integer",
@@ -155,6 +155,10 @@
         "ref" : {
           "type" : "string",
           "example" : "2016-08-29T09:12:33.001Z"
+        },
+        "active" : {
+          "type" : "boolean",
+          "example" : true
         }
       }
     },
