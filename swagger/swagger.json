@@ -13,7 +13,7 @@
     }
   },
   "host" : "virtserver.swaggerhub.com",
-  "basePath" : "/zoobmax/SPA/1.0.0",
+  "basePath" : "/zoobmax/SPA/1.0.1",
   "tags" : [ {
     "name" : "admins",
     "description" : "Secured Admin-only calls"
@@ -142,11 +142,8 @@
   "definitions" : {
     "MenuItems" : {
       "type" : "object",
-      "required" : [ "active", "id", "link", "name" ],
+      "required" : [ "active", "link", "name" ],
       "properties" : {
-        "id" : {
-          "type" : "integer"
-        },
         "name" : {
           "type" : "string",
           "example" : "Widget Adapter"
