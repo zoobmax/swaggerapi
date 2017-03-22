@@ -142,7 +142,7 @@
   "definitions" : {
     "MenuItems" : {
       "type" : "object",
-      "required" : [ "active", "id", "name", "ref" ],
+      "required" : [ "active", "id", "name", "refs" ],
       "properties" : {
         "id" : {
           "type" : "integer",
@@ -152,7 +152,7 @@
           "type" : "string",
           "example" : "Widget Adapter"
         },
-        "ref" : {
+        "refs" : {
           "type" : "string",
           "example" : "2016-08-29T09:12:33.001Z"
         },
