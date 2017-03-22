@@ -145,8 +145,7 @@
       "required" : [ "active", "id", "link", "name" ],
       "properties" : {
         "id" : {
-          "type" : "integer",
-          "example" : 222
+          "type" : "integer"
         },
         "name" : {
           "type" : "string",
