@@ -23,6 +23,46 @@
   } ],
   "schemes" : [ "https" ],
   "paths" : {
+    "/nav-menu" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "searchString",
+          "in" : "query",
+          "description" : "pass an optional search string for looking up inventory",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "skip",
+          "in" : "query",
+          "description" : "number of records to skip for pagination",
+          "required" : false,
+          "type" : "integer",
+          "minimum" : 0,
+          "format" : "int32"
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "maximum number of records to return",
+          "required" : false,
+          "type" : "integer",
+          "maximum" : 50,
+          "minimum" : 0,
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/MenuItems"
+              }
+            }
+          }
+        }
+      }
+    },
     "/inventory" : {
       "get" : {
         "tags" : [ "developers" ],
@@ -100,6 +140,24 @@
     }
   },
   "definitions" : {
+    "MenuItems" : {
+      "type" : "object",
+      "required" : [ "id", "name", "ref" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "example" : 222
+        },
+        "name" : {
+          "type" : "string",
+          "example" : "Widget Adapter"
+        },
+        "ref" : {
+          "type" : "string",
+          "example" : "2016-08-29T09:12:33.001Z"
+        }
+      }
+    },
     "InventoryItem" : {
       "type" : "object",
       "required" : [ "id", "manufacturer", "name", "releaseDate" ],
